@@ -119,8 +119,7 @@ module Snap.Snaplet.PostgresqlSimple (
 
 import           Prelude hiding ((++))
 import           Control.Applicative
-import           Control.Monad.CatchIO (MonadCatchIO)
-import qualified Control.Monad.CatchIO as CIO
+import           Control.Exception.Lifted (onException)
 import           Control.Monad.IO.Class
 import           Control.Monad.State
 import           Control.Monad.Trans.Reader
