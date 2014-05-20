@@ -64,10 +64,10 @@ module Snap.Snaplet.PostgresqlSimple (
   , HasPostgres(..)
   , PGSConfig(..)
   , pgsDefaultConfig
-  , mkPGSConfig 
+  , mkPGSConfig
   , pgsInit
   , pgsInit'
-  , getConnectionString 
+  , getConnectionString
 
   -- * Wrappers and re-exports
   , query
@@ -373,7 +373,7 @@ returning :: (HasPostgres m, ToRow q, FromRow r)
 returning q params = withPG (\c -> P.returning c q params)
 
 ------------------------------------------------------------------------------
--- | 
+-- |
 fold :: (HasPostgres m,
          FromRow row,
          ToRow params,
@@ -383,7 +383,7 @@ fold template qs a f = withPG (\c -> P.fold c template qs a f)
 
 
 ------------------------------------------------------------------------------
--- | 
+-- |
 foldWithOptions :: (HasPostgres m,
                     FromRow row,
                     ToRow params,
@@ -422,7 +422,7 @@ foldWithOptions_ opts template a f =
 
 
 ------------------------------------------------------------------------------
--- | 
+-- |
 forEach :: (HasPostgres m,
             FromRow r,
             ToRow q,
@@ -432,7 +432,7 @@ forEach template qs f = withPG (\c -> P.forEach c template qs f)
 
 
 ------------------------------------------------------------------------------
--- | 
+-- |
 forEach_ :: (HasPostgres m,
              FromRow r,
              MonadSnap m)
